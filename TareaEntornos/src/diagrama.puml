@@ -1,0 +1,24 @@
+@startuml
+
+class Empresa {
+    - CIF : string
+    - razonSocial : string
+    - direccion : string
+    - tlf : long int
+    + asignar(cif : string, rs : string, dir : string, tlf : long int)
+    + obtener() : Empresa
+}
+
+class Cliente {
+    - codCliente : Int
+    - nombre : string
+    - fechaNacimiento : string
+    - tlf : long int
+    + asignar(codCliente : int, nombre : string, fechaNacimiento : string, tlf : long int)
+    + obtener() : Cliente
+}
+
+' Relación de asociación con dirección y multiplicidad
+Empresa "1" <-- "1..*" Cliente : Vende
+
+@enduml
