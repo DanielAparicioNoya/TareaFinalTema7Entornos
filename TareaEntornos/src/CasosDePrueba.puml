@@ -1,0 +1,27 @@
+@startuml
+
+
+
+actor Usuario
+actor Profesor
+actor "Alumno - Daniel" as Alumno
+
+Usuario <|-- Profesor
+Usuario <|-- Alumno
+
+usecase "Login" as UC1
+usecase "Corregir Tarea" as UC2
+usecase "Consultar Tareas Alumnos" as UC3
+usecase "Subir Tarea" as UC4
+usecase "Consultar Tareas Propias" as UC5
+
+
+Usuario -- UC1
+	
+Profesor -- UC2
+Profesor -- UC3
+
+Alumno -- UC4
+Alumno -- UC5
+
+@enduml

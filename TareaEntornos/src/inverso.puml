@@ -1,0 +1,31 @@
+@startuml
+
+class Persona {
+    - nombre : String
+    - dni : int
+}
+
+class Alumno {
+    - numMatricula : long
+    - matriculado : Curso
+}
+
+class Empleado {
+    - numEmpleado : int
+    - profesor : Curso
+}
+
+class Curso {
+    - denominacion : String
+    - ubicacion : String
+}
+
+' Relaciones de Herencia
+Persona <|-- Alumno
+Persona <|-- Empleado
+
+' Relaciones de Asociación (Composición/Agregación simple)
+Alumno --> Curso : matriculado
+Empleado --> Curso : profesor
+
+@enduml
